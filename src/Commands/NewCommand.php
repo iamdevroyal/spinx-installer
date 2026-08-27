@@ -135,12 +135,6 @@ HELP);
         $version = $input->getOption('version');
         $noInteraction = !$input->isInteractive();
 
-        $io->writeln(sprintf(
-            "  Creating application <options=bold>%s</>...",
-            $name,
-        ));
-        $io->newLine();
-
         try {
             $creator = new ProjectCreator(
                 composer:    new Composer(),

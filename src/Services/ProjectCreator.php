@@ -77,6 +77,7 @@ final class ProjectCreator
         $env = [
             'SPINX_FRONTEND'        => $frontend,
             'SPINX_NO_INTERACTION'  => $noInteraction ? 'true' : 'false',
+            'SPINX_MANAGED'         => 'true',   // suppress framework's own banner & summary
         ];
 
         $success = $this->composer->createProject(
