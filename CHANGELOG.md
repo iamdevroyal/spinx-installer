@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `spinx/installer` are documented in this file.
+All notable changes to `spinxphp/installer` are documented in this file.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).

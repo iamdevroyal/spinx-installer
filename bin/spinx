@@ -10,7 +10,7 @@ declare(strict_types=1);
 |
 | This is the entry point for the global `spinx` command installed via:
 |
-|     composer global require spinx/installer
+|     composer global require spinxphp/installer
 |
 | It bootstraps the Symfony Console application and hands control to the
 | registered commands. On Windows, Composer generates a .bat/.cmd shim
@@ -35,7 +35,7 @@ foreach ($autoloadPaths as $path) {
 
 if (!$autoloaded) {
     fwrite(STDERR, "Spinx Installer: autoload.php not found.\n");
-    fwrite(STDERR, "Run `composer global require spinx/installer` to install properly.\n");
+    fwrite(STDERR, "Run `composer global require spinxphp/installer` to install properly.\n");
     exit(1);
 }
 

@@ -1,5 +1,5 @@
 {
-    "name": "spinx/installer",
+    "name": "spinxphp/installer",
     "description": "The official application installer for the Spinx PHP Framework.",
     "keywords": [
         "spinx",
@@ -13,7 +13,7 @@
     "authors": [
         {
             "name": "iamdevroyal",
-            "email": "devroyal@spinx.dev",
+            "email": "devroyal@spinxphp.dev",
             "role": "Lead Developer"
         }
     ],

@@ -7,7 +7,7 @@ The official global application installer for the [Spinx PHP Framework](https://
 Install the global installer once:
 
 ```bash
-composer global require spinx/installer
+composer global require spinxphp/installer
 ```
 
 Ensure your Composer global bin directory is in your `PATH`. On most systems this is:
