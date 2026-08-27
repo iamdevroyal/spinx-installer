@@ -24,7 +24,7 @@ final class Application extends BaseApplication
 {
     public const VERSION = '1.0.0';
 
-    public const FRAMEWORK_PACKAGE = 'spinxphp/framework';
+    public const FRAMEWORK_PACKAGE = 'spinxphp/spinx';
 
     public const FRAMEWORK_PHP_REQUIREMENT = '>=8.2';
 
