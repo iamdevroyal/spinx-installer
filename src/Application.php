@@ -32,6 +32,19 @@ final class Application extends BaseApplication
 
     public const GITHUB_URL = 'https://github.com/iamdevroyal/spinxphp';
 
+    public const AUTHOR = 'Njoku Royal Nnaemeka (@iamdevroyal)';
+
+    public const TAGLINE = 'High-Performance Persistent Workers • Enforced DDD • Reactive Islands';
+
+    public const ASCII_LOGO = <<<'LOGO'
+  ____        _           
+ / ___| _ __ (_)_ __ __  __
+ \___ \| '_ \| | '_ \\ \/ /
+  ___) | |_) | | | | |>  < 
+ |____/| .__/|_|_| |_/_/\_\
+       |_|
+LOGO;
+
     public function __construct()
     {
         parent::__construct('Spinx Installer', self::VERSION);

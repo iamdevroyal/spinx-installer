@@ -166,8 +166,11 @@ HELP);
     private function printBanner(OutputInterface $output): void
     {
         $output->writeln('');
-        $output->writeln('  <fg=magenta;options=bold>░ Spinx Application Installer</>');
-        $output->writeln('  <fg=gray>  Version: ' . Application::VERSION . '</>');
+        $output->writeln('<fg=magenta;options=bold>' . Application::ASCII_LOGO . '</>');
+        $output->writeln('');
+        $output->writeln('  <fg=white;options=bold>Spinx PHP Framework</> <fg=gray>— v' . Application::VERSION . '</>');
+        $output->writeln('  <fg=gray>Created by</> <fg=magenta;options=bold>' . Application::AUTHOR . '</>');
+        $output->writeln('  <fg=gray>' . Application::TAGLINE . '</>');
         $output->writeln('');
     }
 }

@@ -24,7 +24,11 @@ final class AboutCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln('');
-        $output->writeln('  <fg=magenta;options=bold>Spinx PHP Framework</>');
+        $output->writeln('<fg=magenta;options=bold>' . Application::ASCII_LOGO . '</>');
+        $output->writeln('');
+        $output->writeln('  <fg=white;options=bold>Spinx PHP Framework</> <fg=gray>— v' . Application::VERSION . '</>');
+        $output->writeln('  <fg=gray>Created by</> <fg=magenta;options=bold>' . Application::AUTHOR . '</>');
+        $output->writeln('  <fg=gray>' . Application::TAGLINE . '</>');
         $output->writeln('');
         $output->writeln(sprintf('  <fg=gray>Installer Version  :</> <options=bold>%s</>', Application::VERSION));
         $output->writeln(sprintf('  <fg=gray>Framework Package  :</> <options=bold>%s</>', Application::FRAMEWORK_PACKAGE));

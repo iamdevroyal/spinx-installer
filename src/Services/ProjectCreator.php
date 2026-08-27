@@ -63,7 +63,13 @@ final class ProjectCreator
         $this->composer->requireAvailable();
 
         // ── 3. Create project ────────────────────────────────────────────
-        $this->writeLine("  <fg=default>◌ Installing Spinx framework...</>");
+        $this->writeLine("  <fg=default>Creating Spinx application...</>");
+        $this->newLine();
+        $this->writeLine("  <fg=green>✓</> <fg=default>Application name:</> <fg=white;options=bold>{$name}</>");
+        $this->writeLine("  <fg=green>✓</> <fg=default>Spinx version:</> <fg=white;options=bold>" . ($version ?? 'latest') . "</>");
+        $this->writeLine("  <fg=green>✓</> <fg=default>Environment verified (PHP " . PHP_VERSION . ")</>");
+        $this->writeLine("  <fg=green>✓</> <fg=default>Installing dependencies & skeleton...</>");
+        $this->newLine();
 
         // Environment variables forwarded into the composer create-project
         // subprocess. The framework Installer reads these so it can skip STDIN
@@ -101,25 +107,20 @@ final class ProjectCreator
     private function printSuccess(string $name, string $frontend): void
     {
         $this->newLine();
-        $this->writeLine("  <fg=green;options=bold>✔ Spinx application created successfully!</>");
+        $this->writeLine("  <fg=green;options=bold>✓ Application created</>");
         $this->newLine();
-        $this->writeLine("  <fg=gray>─────────────────────────────────────</>");
-        $this->writeLine("  <fg=default>  App name : </><fg=white;options=bold>{$name}</>");
-        if ($frontend !== 'none') {
-            $this->writeLine("  <fg=default>  Frontend : </><fg=white;options=bold>{$frontend}</>");
-        }
-        $this->writeLine("  <fg=gray>─────────────────────────────────────</>");
+        $this->writeLine("  <fg=green;options=bold>Spinx application created successfully!</>");
         $this->newLine();
         $this->writeLine("  <fg=default;options=bold>Next steps:</>");
         $this->newLine();
-        $this->writeLine("  <fg=gray>    cd {$name}</>");
+        $this->writeLine("    <fg=magenta;options=bold>cd {$name}</>");
         if ($frontend !== 'none') {
-            $this->writeLine("  <fg=gray>    cd frontend && npm install && cd ..</>");
+            $this->writeLine("    <fg=gray>cd frontend && npm install && cd ..</>");
         }
-        $this->writeLine("  <fg=magenta;options=bold>    php spinx serve</>");
+        $this->writeLine("    <fg=magenta;options=bold>php spinx serve</>");
         $this->newLine();
-        $this->writeLine("  <fg=gray>  Docs  : " . Application::DOCS_URL . "</>");
-        $this->writeLine("  <fg=gray>  GitHub: " . Application::GITHUB_URL . "</>");
+        $this->writeLine("  <fg=gray>Docs   :</> <info>" . Application::DOCS_URL . "</info>");
+        $this->writeLine("  <fg=gray>GitHub :</> <info>" . Application::GITHUB_URL . "</info>");
         $this->newLine();
     }
 
