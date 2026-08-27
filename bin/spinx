@@ -1,0 +1,45 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+/*
+|--------------------------------------------------------------------------
+| Spinx Global Installer
+|--------------------------------------------------------------------------
+|
+| This is the entry point for the global `spinx` command installed via:
+|
+|     composer global require spinx/installer
+|
+| It bootstraps the Symfony Console application and hands control to the
+| registered commands. On Windows, Composer generates a .bat/.cmd shim
+| automatically — no extra platform handling needed here.
+|
+*/
+
+$autoloadPaths = [
+    __DIR__ . '/../vendor/autoload.php',   // installed via composer global
+    __DIR__ . '/../../autoload.php',        // inside vendor/bin/ symlink
+    __DIR__ . '/../../../autoload.php',     // nested vendor scenarios
+];
+
+$autoloaded = false;
+foreach ($autoloadPaths as $path) {
+    if (file_exists($path)) {
+        require $path;
+        $autoloaded = true;
+        break;
+    }
+}
+
+if (!$autoloaded) {
+    fwrite(STDERR, "Spinx Installer: autoload.php not found.\n");
+    fwrite(STDERR, "Run `composer global require spinx/installer` to install properly.\n");
+    exit(1);
+}
+
+use Spinx\Installer\Application;
+
+$app = new Application();
+exit($app->run());
